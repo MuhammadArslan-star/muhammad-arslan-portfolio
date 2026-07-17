@@ -4,6 +4,7 @@
   <div class="nav-links">
     <a (click)="scrollTo('about')">About</a>
     <a (click)="scrollTo('experience')">Experience</a>
+    <a (click)="scrollTo('projects')">Projects</a>
     <a (click)="scrollTo('skills')">Skills</a>
     <a (click)="scrollTo('education')">Education</a>
   </div>
@@ -16,6 +17,7 @@
     <div class="hero-bg">
       <div class="gradient-sphere sphere-1"></div>
       <div class="gradient-sphere sphere-2"></div>
+      <div class="gradient-sphere sphere-3"></div>
     </div>
     <div class="container hero-content">
       <div class="badge fade-up">Available for opportunities</div>
@@ -23,11 +25,35 @@
         Hi, I'm <span class="highlight">{{ data.personalInfo.name }}</span>
       </h1>
       <h2 class="hero-subtitle fade-up delay-2">{{ data.personalInfo.title }}</h2>
-      <p class="hero-description fade-up delay-3">{{ data.personalInfo.location }}</p>
+      <p class="hero-description fade-up delay-3">📍 {{ data.personalInfo.location }}</p>
       
+      <div class="hero-stats fade-up delay-3">
+        <div class="stat-item">
+          <span class="stat-number">6+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">10+</span>
+          <span class="stat-label">Apps Delivered</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Companies</span>
+        </div>
+      </div>
+
       <div class="hero-actions fade-up delay-4">
-        <a href="mailto:{{data.personalInfo.email}}" class="btn btn-primary">Contact Me</a>
-        <a href="{{data.personalInfo.linkedIn}}" target="_blank" class="btn btn-secondary">LinkedIn</a>
+        <a href="mailto:{{data.personalInfo.email}}" class="btn btn-primary">
+          <span class="btn-icon">✉️</span> Contact Me
+        </a>
+        <a href="{{data.personalInfo.linkedIn}}" target="_blank" class="btn btn-secondary">
+          <span class="btn-icon">🔗</span> LinkedIn
+        </a>
+        <a (click)="scrollTo('projects')" class="btn btn-ghost">
+          View Projects ↓
+        </a>
       </div>
     </div>
   </section>
@@ -36,6 +62,7 @@
   <section class="section" id="about">
     <div class="container">
       <div class="section-header">
+        <span class="section-tag">Introduction</span>
         <h2 class="section-title">About Me</h2>
         <div class="title-line"></div>
       </div>
@@ -49,11 +76,13 @@
   <section class="section" id="experience">
     <div class="container">
       <div class="section-header">
+        <span class="section-tag">Career Path</span>
         <h2 class="section-title">Experience</h2>
         <div class="title-line"></div>
       </div>
       <div class="experience-grid">
-        <div class="exp-card bento-card" *ngFor="let job of data.experience">
+        <div class="exp-card bento-card" *ngFor="let job of data.experience; let i = index">
+          <div class="exp-number">{{ '0' + (i + 1) }}</div>
           <div class="exp-header">
             <div class="exp-role-company">
               <h3 class="role">{{ job.role }}</h3>
@@ -75,10 +104,161 @@
     </div>
   </section>
 
+  <!-- Featured Projects Showcase -->
+  <section class="section projects-section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Portfolio</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="projects-showcase">
+        <!-- ========== MOBILE PROJECTS ========== -->
+        <ng-container *ngFor="let project of projects">
+          <div class="project-showcase-card" *ngIf="project.type === 'mobile'" [style.background]="project.gradient">
+            
+             <a [href]="project.link" target="_blank" class="project-type-badge clickable-badge" *ngIf="project.link">
+              <span>📱 Mobile App</span> <span class="badge-arrow">↗</span>
+             </a>
+             <div class="project-type-badge" *ngIf="!project.link">📱 Mobile App</div>
+            
+            <div class="project-info">
+              <h3 class="project-name">{{ project.name }}</h3>
+              <p class="project-desc">{{ project.description }}</p>
+              <div class="project-tech-stack">
+                <span class="tech-badge" *ngFor="let tech of project.techStack">{{ tech }}</span>
+              </div>
+              <div class="project-actions" *ngIf="project.link">
+                <a [href]="project.link" target="_blank" class="btn btn-project-cta app-store-btn">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" class="apple-logo-svg">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-.1 3.81.22 1.25.5 2.23 1.66 2.72 2.77-2.62 1.51-2.2 4.69.22 5.67-.8 2-1.85 4.01-3.15 5.1M15.97 4.17c.66-.81 1.11-1.93.99-3.06-1 .04-2.21.67-2.93 1.49-.62.69-1.16 1.84-1.01 2.96 1.12.09 2.27-.58 2.95-1.39z"/>
+                  </svg>
+                  <div class="btn-text-group">
+                    <span class="btn-subtext">Download on the</span>
+                    <span class="btn-maintext">App Store</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="phone-carousel">
+              <button class="carousel-arrow arrow-left" (click)="prevSlide(project.id, project.screenshots!.length)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+
+              <div class="phone-frame">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                  <img *ngFor="let img of project.screenshots; let j = index" 
+                       [src]="img" 
+                       [alt]="project.name + ' screenshot ' + (j + 1)"
+                       [class.active]="j === activeIndices[project.id]"
+                       class="screenshot-img" />
+                </div>
+              </div>
+
+              <button class="carousel-arrow arrow-right" (click)="nextSlide(project.id, project.screenshots!.length)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+
+            <div class="carousel-dots">
+              <button *ngFor="let img of project.screenshots; let j = index" 
+                      class="dot" 
+                      [class.active]="j === activeIndices[project.id]"
+                      (click)="goToSlide(project.id, j, project.screenshots!.length)">
+              </button>
+            </div>
+          </div>
+
+          <!-- ========== WEB PROJECTS ========== -->
+          <div class="project-showcase-card web-project-card" *ngIf="project.type === 'web'" [style.background]="project.gradient">
+            
+             <a [href]="project.link" target="_blank" class="project-type-badge clickable-badge" *ngIf="project.link">
+              <span>🌐 Web Application</span> <span class="badge-arrow">↗</span>
+             </a>
+             <div class="project-type-badge" *ngIf="!project.link">🌐 Web Application</div>
+            
+            <div class="project-info">
+              <h3 class="project-name">{{ project.name }}</h3>
+              <p class="project-desc">{{ project.description }}</p>
+              <div class="project-tech-stack">
+                <span class="tech-badge" *ngFor="let tech of project.techStack">{{ tech }}</span>
+              </div>
+              <div class="project-actions" *ngIf="project.link">
+                <a [href]="project.link" target="_blank" class="btn btn-project-cta">
+                  🌐 Visit Live Website
+                </a>
+              </div>
+            </div>
+
+            <!-- Module Tabs -->
+            <div class="module-tabs">
+              <button *ngFor="let mod of project.modules; let mi = index" 
+                      class="module-tab"
+                      [class.active]="mi === activeModule[project.id]"
+                      (click)="selectModule(project.id, mi)">
+                <span class="module-icon">{{ mod.icon }}</span>
+                <span class="module-name">{{ mod.name }}</span>
+              </button>
+            </div>
+
+            <!-- Web Screenshot Browser Frame -->
+            <div class="browser-carousel">
+              <button class="carousel-arrow arrow-left" (click)="prevWebScreenshot(project.id, getActiveModuleScreenshots(project).length)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+
+              <div class="browser-frame">
+                <div class="browser-bar">
+                  <div class="browser-dots">
+                    <span class="b-dot red"></span>
+                    <span class="b-dot yellow"></span>
+                    <span class="b-dot green"></span>
+                  </div>
+                  <div class="browser-url">
+                    <span>🔒</span> mobilesentrix.com
+                  </div>
+                </div>
+                <div class="browser-screen">
+                  <img *ngFor="let scr of getActiveModuleScreenshots(project); let j = index" 
+                       [src]="scr.src" 
+                       [alt]="scr.label"
+                       [class.active]="j === activeModuleScreenshot[project.id]"
+                       class="web-screenshot-img" />
+                </div>
+              </div>
+
+              <button class="carousel-arrow arrow-right" (click)="nextWebScreenshot(project.id, getActiveModuleScreenshots(project).length)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+
+            <!-- Screenshot Label -->
+            <div class="screenshot-label" *ngIf="getActiveModuleScreenshots(project).length > 0">
+              {{ getActiveModuleScreenshots(project)[activeModuleScreenshot[project.id]]?.label }}
+            </div>
+
+            <!-- Web Carousel Dots -->
+            <div class="carousel-dots">
+              <button *ngFor="let scr of getActiveModuleScreenshots(project); let j = index" 
+                      class="dot" 
+                      [class.active]="j === activeModuleScreenshot[project.id]"
+                      (click)="goToWebScreenshot(project.id, j)">
+              </button>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </section>
+
   <!-- Skills -->
   <section class="section" id="skills">
     <div class="container">
       <div class="section-header">
+        <span class="section-tag">What I Use</span>
         <h2 class="section-title">Technical Expertise</h2>
         <div class="title-line"></div>
       </div>
@@ -93,10 +273,15 @@
   <!-- Education & Achievements (Bento Grid) -->
   <section class="section" id="education">
     <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Background</span>
+        <h2 class="section-title">Education & Achievements</h2>
+        <div class="title-line"></div>
+      </div>
       <div class="bento-layout">
         <!-- Education block -->
         <div class="bento-card edu-container">
-          <h2 class="bento-title">Education</h2>
+          <h2 class="bento-title">🎓 Education</h2>
           <div class="edu-item" *ngFor="let edu of data.education">
             <h3 class="edu-degree">{{ edu.degree }}</h3>
             <p class="edu-inst">{{ edu.institution }}</p>
@@ -106,7 +291,7 @@
         
         <!-- Achievements block -->
         <div class="bento-card ach-container">
-          <h2 class="bento-title">Key Achievements</h2>
+          <h2 class="bento-title">🏆 Key Achievements</h2>
           <ul class="ach-list">
             <li *ngFor="let ach of data.achievements">
               <div class="check-circle">

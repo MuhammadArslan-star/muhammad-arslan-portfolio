@@ -1,7 +1,7 @@
 export const RESUME_DATA = {
   personalInfo: {
     name: 'MUHAMMAD ARSLAN',
-    title: 'Front-End & Hybrid Mobile App Developer | Angular • Ionic • TypeScript',
+    title: 'Front-End & Hybrid Mobile App Developer | Angular • Ionic • TypeScript • Android • Swift',
     location: 'Islamabad Pakistan',
     email: 'arslanshafiq95@gmail.com',
     phone: '+92 345 0576814',
@@ -12,7 +12,7 @@ export const RESUME_DATA = {
     {
       company: 'Ideal Innovative Solutions Pvt. Ltd.',
       period: 'Oct 25, 2021 – Present',
-      role: 'Ionic + Angular Developer',
+      role: 'Front-End & Hybrid Mobile Application Developer',
       projects: [
         {
           name: 'Mobile Sentrix Attendance Terminal App',
@@ -21,10 +21,17 @@ export const RESUME_DATA = {
         {
           name: 'Mobile Sentrix Employee App',
           description: 'Implemented Task Management, Timesheet, Assets Management, Scheduler, Leave, Expense, and Loan flows, with RTM integration for real-time updates.'
+        },
+        {
+          name: 'Mobile Sentrix Employee Web Portal',
+          description: 'Built a comprehensive HRMS web portal with modules for Leave, Loan, Attendance, Expense request/approval workflows, Task Management, and Employee Profile management.'
         }
       ],
       responsibilities: [
-        'Implemented modular architectures for scalable Ionic + Angular apps.',
+        'Implemented modular architectures for scalable Ionic + Angular apps and web applications.',
+        'Developed the Mobile Sentrix Employee Web Portal with complete request/approval workflows for Leave, Loan, Attendance, and Expense modules.',
+        'Built comprehensive Employee Profile management with Schedule, Salary, Documents, Training, Assets, and Contract views.',
+        'Developed Task Management system with task creation, assignment, comments, attachments, and priority tracking.',
         'Developed dynamic UI components, circular progress bars, and bottom sheet dropdowns.',
         'Integrated real-time messaging (RTM) and offline storage (IndexedDB and SQLite).',
         'Applied dynamic theming for multi-platform apps.',
