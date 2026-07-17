@@ -56,9 +56,13 @@
   --tech-tag-border: rgba(2, 132, 199, 0.2);
   --arsenal-glow: rgba(2, 132, 199, 0.05);
   --arsenal-dot-glow: rgba(2, 132, 199, 0.4);
-  --edu-icon-bg: rgba(2, 132, 199, 0.06);
   --edu-icon-glow: rgba(2, 132, 199, 0.08);
   --connect-icon-hover-bg: rgba(2, 132, 199, 0.06);
+
+  /* Project Card Gradients */
+  --proj-terminal-bg: linear-gradient(135deg, #f5f3ff 0%, #e0e7ff 100%);
+  --proj-employee-bg: linear-gradient(135deg, #ecfeff 0%, #e2e8f0 100%);
+  --proj-web-bg: linear-gradient(135deg, #f8fafc 0%, #dbeafe 100%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -113,6 +117,11 @@
     --edu-icon-bg: rgba(0, 229, 255, 0.05);
     --edu-icon-glow: rgba(0, 229, 255, 0.1);
     --connect-icon-hover-bg: rgba(0, 229, 255, 0.05);
+
+    /* Project Card Gradients */
+    --proj-terminal-bg: linear-gradient(135deg, #1a0533 0%, #0d1b3e 50%, #0a0a2e 100%);
+    --proj-employee-bg: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    --proj-web-bg: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
   }
 }
 

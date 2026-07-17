@@ -55,7 +55,7 @@ export class AppComponent implements OnInit, OnDestroy {
         'assets/terminal/terminal6.webp',
         'assets/terminal/terminal7.webp'
       ],
-      gradient: 'linear-gradient(135deg, #1a0533 0%, #0d1b3e 50%, #0a0a2e 100%)'
+      gradient: 'var(--proj-terminal-bg)'
     },
     {
       id: 'employee',
@@ -75,7 +75,7 @@ export class AppComponent implements OnInit, OnDestroy {
         'assets/user-app/user8.webp',
         'assets/user-app/user9.webp'
       ],
-      gradient: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)'
+      gradient: 'var(--proj-employee-bg)'
     },
     {
       id: 'web-hrms',
@@ -84,7 +84,7 @@ export class AppComponent implements OnInit, OnDestroy {
       techStack: ['Angular', 'TypeScript', 'SCSS', 'REST APIs', 'GraphQL', 'RxJS'],
       type: 'web',
       link: 'https://hrms-bugs.sentrixbar.com/',
-      gradient: 'linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)',
+      gradient: 'var(--proj-web-bg)',
       modules: [
         {
           name: 'Employee Profile',
