@@ -43,7 +43,7 @@ export class AppComponent implements OnInit, OnDestroy {
       id: 'terminal',
       name: 'Mobile Sentrix Attendance Terminal',
       description: 'A powerful attendance management terminal app with real-time clock in/out, break management, dynamic scheduling, and offline-capable data sync. Built with Ionic + Angular featuring a stunning dark-themed UI.',
-      techStack: ['Ionic', 'Angular', 'TypeScript', 'GraphQL', 'IndexedDB', 'FCM'],
+      techStack: ['Ionic', 'Angular', 'TypeScript', 'GraphQL'],
       type: 'mobile',
       link: 'https://apps.apple.com/gb/app/mobile-sentrix-terminal-mst/id6502637979',
       screenshots: [
@@ -61,7 +61,7 @@ export class AppComponent implements OnInit, OnDestroy {
       id: 'employee',
       name: 'Mobile Sentrix Employee App',
       description: 'Comprehensive HRMS employee app featuring task management, timesheets, asset tracking, leave & expense management, real-time messaging, and smart scheduler — all in a sleek, intuitive interface.',
-      techStack: ['Ionic', 'Angular', 'TypeScript', 'REST APIs', 'Socket.io', 'SQLite'],
+      techStack: ['Ionic', 'Angular', 'TypeScript', 'REST APIs', 'Socket.io', 'SQLite', 'IndexedDB', 'FCM'],
       type: 'mobile',
       link: 'https://apps.apple.com/us/app/hrms-mobile/id6449835914?',
       screenshots: [
