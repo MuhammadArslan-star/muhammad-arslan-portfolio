@@ -1,225 +1,190 @@
-<!-- Floating Nav -->
-<nav class="floating-nav">
-  <div class="nav-brand">MA.</div>
-  <div class="nav-links">
-    <a (click)="scrollTo('about')">About</a>
-    <a (click)="scrollTo('experience')">Experience</a>
-    <a (click)="scrollTo('projects')">Projects</a>
-    <a (click)="scrollTo('skills')">Skills</a>
-    <a (click)="scrollTo('education')">Education</a>
+<!-- Header / Navbar -->
+<header class="navbar">
+  <div class="container nav-container">
+    <div class="nav-brand" (click)="scrollTo('hero')">DevPortfolio</div>
+    <div class="nav-links">
+      <a (click)="scrollTo('hero')" class="nav-link">Home</a>
+      <a (click)="scrollTo('about')" class="nav-link">About</a>
+      <a (click)="scrollTo('experience')" class="nav-link">Experience</a>
+      <a (click)="scrollTo('projects')" class="nav-link">Projects</a>
+      <a (click)="scrollTo('skills')" class="nav-link">Skills</a>
+      <a (click)="scrollTo('contact')" class="nav-link">Contact</a>
+    </div>
+    <button class="btn-hire-me" (click)="scrollTo('contact')">Hire Me</button>
   </div>
-  <button class="nav-cta" (click)="scrollTo('contact')">Let's Talk</button>
-</nav>
+</header>
 
 <main>
   <!-- Hero Section -->
-  <section class="hero" id="hero">
-    <div class="hero-bg">
-      <div class="gradient-sphere sphere-1"></div>
-      <div class="gradient-sphere sphere-2"></div>
-      <div class="gradient-sphere sphere-3"></div>
+  <section class="hero-section" id="hero">
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    <div class="container hero-wrapper">
+      <span class="hero-tagline">EXPERT IN IONIC / ANGULAR</span>
+      <h1 class="hero-name">{{ data.personalInfo.name }}</h1>
+      <h2 class="hero-role">Front-End & Hybrid Mobile App Developer</h2>
+      <p class="hero-lead">
+        Building seamless cross-platform experiences with Angular and Ionic. Bridging the gap between performance and design.
+      </p>
+      <div class="hero-buttons">
+        <button class="btn btn-cyan-glow" (click)="scrollTo('projects')">View Projects <span class="arrow">→</span></button>
+        <button class="btn btn-outline" (click)="scrollTo('contact')">Contact Me</button>
+      </div>
     </div>
-    <div class="container hero-content">
-      <div class="badge fade-up">Available for opportunities</div>
-      <h1 class="hero-title fade-up delay-1">
-        Hi, I'm <span class="highlight">{{ data.personalInfo.name }}</span>
-      </h1>
-      <h2 class="hero-subtitle fade-up delay-2">{{ data.personalInfo.title }}</h2>
-      <p class="hero-description fade-up delay-3">📍 {{ data.personalInfo.location }}</p>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="container about-wrapper">
+      <!-- Left side: Glow Avatar HUD -->
+      <div class="about-visual">
+        <div class="avatar-hud">
+          <div class="hud-ring ring-1"></div>
+          <div class="hud-ring ring-2"></div>
+          <div class="avatar-frame">
+            <img src="assets/avatar.png" alt="{{ data.personalInfo.name }}" class="avatar-img" onerror="this.src='https://api.dicebear.com/7.x/bottts-neutral/svg?seed=Arslan';" />
+          </div>
+          <div class="experience-badge">
+            <span class="badge-num">6+</span>
+            <span class="badge-lbl">Years of<br>Experience</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side: Architecting Digital Experiences -->
+      <div class="about-content">
+        <h2 class="about-heading">Architecting Digital Experiences</h2>
+        <p class="about-description">
+          I am a high-performance Hybrid Mobile Developer specializing in building scalable enterprise applications. With over 6 years of professional experience, I excel in the delicate balance between Angular's robust architecture and Ionic's versatile mobile capabilities.
+        </p>
+
+        <div class="about-skills-grid">
+          <div class="skills-col">
+            <h4 class="col-title">Expertise</h4>
+            <p class="col-desc">Angular, Ionic, TypeScript</p>
+          </div>
+          <div class="skills-col">
+            <h4 class="col-title">Native Hooks</h4>
+            <p class="col-desc">Android (Java), CocoaPods, Swift</p>
+          </div>
+        </div>
+
+        <div class="about-actions">
+          <a href="https://github.com/MuhammadArslan-star" target="_blank" class="btn-about-link">
+            <span class="btn-icon">📁</span> GitHub
+          </a>
+          <a href="https://linkedin.com" target="_blank" class="btn-about-link">
+            <span class="btn-icon">💼</span> LinkedIn
+          </a>
+          <a href="mailto:arslanshafiq95&#64;gmail.com" class="btn-about-link">
+            <span class="btn-icon">📧</span> Contact
+          </a>
+          <a href="#" target="_blank" class="btn-about-link">
+            <span class="btn-icon">📄</span> Resume
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Journey (Timeline) -->
+  <section class="journey-section" id="experience">
+    <div class="container">
+      <h2 class="section-title">Professional Journey</h2>
       
-      <div class="hero-stats fade-up delay-3">
-        <div class="stat-item">
-          <span class="stat-number">6+</span>
-          <span class="stat-label">Years Experience</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-number">10+</span>
-          <span class="stat-label">Apps Delivered</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-number">3</span>
-          <span class="stat-label">Companies</span>
-        </div>
-      </div>
-
-      <div class="hero-actions fade-up delay-4">
-        <a href="mailto:{{data.personalInfo.email}}" class="btn btn-primary">
-          <span class="btn-icon">✉️</span> Contact Me
-        </a>
-        <a href="{{data.personalInfo.linkedIn}}" target="_blank" class="btn btn-secondary">
-          <span class="btn-icon">🔗</span> LinkedIn
-        </a>
-        <a (click)="scrollTo('projects')" class="btn btn-ghost">
-          View Projects ↓
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section class="section" id="about">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Introduction</span>
-        <h2 class="section-title">About Me</h2>
-        <div class="title-line"></div>
-      </div>
-      <div class="about-card bento-card">
-        <p class="about-text">{{ data.summary }}</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience -->
-  <section class="section" id="experience">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Career Path</span>
-        <h2 class="section-title">Experience</h2>
-        <div class="title-line"></div>
-      </div>
-      <div class="experience-grid">
-        <div class="exp-card bento-card" *ngFor="let job of data.experience; let i = index">
-          <div class="exp-number">{{ '0' + (i + 1) }}</div>
-          <div class="exp-header">
-            <div class="exp-role-company">
-              <h3 class="role">{{ job.role }}</h3>
-              <h4 class="company">{{ job.company }}</h4>
-            </div>
-            <span class="period badge">{{ job.period }}</span>
-          </div>
-          <div class="exp-projects" *ngIf="job.projects && job.projects.length">
-            <h5 class="sub-heading">Featured Projects</h5>
-            <div class="project-tags">
-              <span class="project-tag" *ngFor="let p of job.projects" [title]="p.description">{{ p.name }}</span>
-            </div>
-          </div>
-          <ul class="exp-duties">
-            <li *ngFor="let resp of job.responsibilities">{{ resp }}</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Projects Showcase -->
-  <section class="section projects-section" id="projects">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Portfolio</span>
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="title-line"></div>
-      </div>
-
-      <div class="projects-showcase">
-        <!-- ========== MOBILE PROJECTS ========== -->
-        <ng-container *ngFor="let project of projects">
-          <div class="project-showcase-card" *ngIf="project.type === 'mobile'" [style.background]="project.gradient">
+      <div class="timeline-container">
+        <div class="timeline-line"></div>
+        
+        <div class="timeline-item" *ngFor="let job of data.experience; let i = index">
+          <div class="timeline-dot"></div>
+          
+          <div class="timeline-content">
+            <span class="timeline-period">{{ job.period }}</span>
+            <h3 class="timeline-role">{{ job.role }}</h3>
+            <h4 class="timeline-company">{{ job.company }}</h4>
             
-             <a [href]="project.link" target="_blank" class="project-type-badge clickable-badge" *ngIf="project.link">
-              <span>📱 Mobile App</span> <span class="badge-arrow">↗</span>
-             </a>
-             <div class="project-type-badge" *ngIf="!project.link">📱 Mobile App</div>
-            
-            <div class="project-info">
-              <h3 class="project-name">{{ project.name }}</h3>
-              <p class="project-desc">{{ project.description }}</p>
-              <div class="project-tech-stack">
-                <span class="tech-badge" *ngFor="let tech of project.techStack">{{ tech }}</span>
+            <ul class="timeline-duties">
+              <li *ngFor="let resp of job.responsibilities">{{ resp }}</li>
+            </ul>
+
+            <div class="timeline-projects" *ngIf="job.projects && job.projects.length">
+              <span class="projects-title">Featured Projects:</span>
+              <div class="timeline-project-tags">
+                <span class="timeline-proj-tag" *ngFor="let p of job.projects" [title]="p.description">{{ p.name }}</span>
               </div>
-              <div class="project-actions" *ngIf="project.link">
-                <a [href]="project.link" target="_blank" class="btn btn-project-cta app-store-btn">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" class="apple-logo-svg">
-                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-.1 3.81.22 1.25.5 2.23 1.66 2.72 2.77-2.62 1.51-2.2 4.69.22 5.67-.8 2-1.85 4.01-3.15 5.1M15.97 4.17c.66-.81 1.11-1.93.99-3.06-1 .04-2.21.67-2.93 1.49-.62.69-1.16 1.84-1.01 2.96 1.12.09 2.27-.58 2.95-1.39z"/>
-                  </svg>
-                  <div class="btn-text-group">
-                    <span class="btn-subtext">Download on the</span>
-                    <span class="btn-maintext">App Store</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Showcase (Projects) -->
+  <section class="showcase-section" id="projects">
+    <div class="container">
+      <div class="showcase-header">
+        <div>
+          <h2 class="section-title">Technical Showcase</h2>
+          <p class="section-subtitle">Selected works demonstrating hybrid performance and clean architecture.</p>
+        </div>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Loop Projects -->
+        <div class="showcase-card" *ngFor="let project of projects" [style.background]="project.gradient">
+          <div class="card-glow"></div>
+          
+          <!-- Project Media / Preview Area -->
+          <div class="project-preview-area">
+            <!-- Mobile App Screen Frame -->
+            <div class="mobile-frame-container" *ngIf="project.type === 'mobile'">
+              <div class="phone-carousel">
+                <button class="carousel-arrow arrow-left" (click)="prevSlide(project.id, project.screenshots!.length)">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <div class="phone-mockup">
+                  <div class="phone-notch"></div>
+                  <div class="phone-screen">
+                    <img *ngFor="let img of project.screenshots; let j = index" 
+                         [src]="img" 
+                         [alt]="project.name + ' screenshot ' + (j + 1)"
+                         [class.active]="j === activeIndices[project.id]"
+                         class="screenshot-img" />
                   </div>
-                </a>
-              </div>
-            </div>
-
-            <div class="phone-carousel">
-              <button class="carousel-arrow arrow-left" (click)="prevSlide(project.id, project.screenshots!.length)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-              </button>
-
-              <div class="phone-frame">
-                <div class="phone-notch"></div>
-                <div class="phone-screen">
-                  <img *ngFor="let img of project.screenshots; let j = index" 
-                       [src]="img" 
-                       [alt]="project.name + ' screenshot ' + (j + 1)"
-                       [class.active]="j === activeIndices[project.id]"
-                       class="screenshot-img" />
                 </div>
+                <button class="carousel-arrow arrow-right" (click)="nextSlide(project.id, project.screenshots!.length)">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
               </div>
-
-              <button class="carousel-arrow arrow-right" (click)="nextSlide(project.id, project.screenshots!.length)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-              </button>
-            </div>
-
-            <div class="carousel-dots">
-              <button *ngFor="let img of project.screenshots; let j = index" 
-                      class="dot" 
-                      [class.active]="j === activeIndices[project.id]"
-                      (click)="goToSlide(project.id, j, project.screenshots!.length)">
-              </button>
-            </div>
-          </div>
-
-          <!-- ========== WEB PROJECTS ========== -->
-          <div class="project-showcase-card web-project-card" *ngIf="project.type === 'web'" [style.background]="project.gradient">
-            
-             <a [href]="project.link" target="_blank" class="project-type-badge clickable-badge" *ngIf="project.link">
-              <span>🌐 Web Application</span> <span class="badge-arrow">↗</span>
-             </a>
-             <div class="project-type-badge" *ngIf="!project.link">🌐 Web Application</div>
-            
-            <div class="project-info">
-              <h3 class="project-name">{{ project.name }}</h3>
-              <p class="project-desc">{{ project.description }}</p>
-              <div class="project-tech-stack">
-                <span class="tech-badge" *ngFor="let tech of project.techStack">{{ tech }}</span>
-              </div>
-              <div class="project-actions" *ngIf="project.link">
-                <a [href]="project.link" target="_blank" class="btn btn-project-cta">
-                  🌐 Visit Live Website
-                </a>
+              <div class="carousel-dots-wrap">
+                <button *ngFor="let img of project.screenshots; let j = index" 
+                        class="dot-indicator" 
+                        [class.active]="j === activeIndices[project.id]"
+                        (click)="goToSlide(project.id, j, project.screenshots!.length)">
+                </button>
               </div>
             </div>
 
-            <!-- Module Tabs -->
-            <div class="module-tabs">
-              <button *ngFor="let mod of project.modules; let mi = index" 
-                      class="module-tab"
-                      [class.active]="mi === activeModule[project.id]"
-                      (click)="selectModule(project.id, mi)">
-                <span class="module-icon">{{ mod.icon }}</span>
-                <span class="module-name">{{ mod.name }}</span>
-              </button>
-            </div>
-
-            <!-- Web Screenshot Browser Frame -->
-            <div class="browser-carousel">
-              <button class="carousel-arrow arrow-left" (click)="prevWebScreenshot(project.id, getActiveModuleScreenshots(project).length)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-              </button>
-
-              <div class="browser-frame">
-                <div class="browser-bar">
+            <!-- Web App Screen Frame -->
+            <div class="web-frame-container" *ngIf="project.type === 'web'">
+              <div class="module-tabs-row">
+                <button *ngFor="let mod of project.modules; let mi = index" 
+                        class="tab-btn"
+                        [class.active]="mi === activeModule[project.id]"
+                        (click)="selectModule(project.id, mi)">
+                  <span class="tab-icon">{{ mod.icon }}</span>
+                  <span class="tab-name">{{ mod.name }}</span>
+                </button>
+              </div>
+              
+              <div class="browser-mockup">
+                <div class="browser-header">
                   <div class="browser-dots">
-                    <span class="b-dot red"></span>
-                    <span class="b-dot yellow"></span>
-                    <span class="b-dot green"></span>
+                    <span class="br-dot red"></span>
+                    <span class="br-dot yellow"></span>
+                    <span class="br-dot green"></span>
                   </div>
-                  <div class="browser-url">
-                    <span>🔒</span> mobilesentrix.com
-                  </div>
+                  <div class="browser-address">🔒 mobilesentrix.com</div>
                 </div>
                 <div class="browser-screen">
                   <img *ngFor="let scr of getActiveModuleScreenshots(project); let j = index" 
@@ -230,101 +195,169 @@
                 </div>
               </div>
 
-              <button class="carousel-arrow arrow-right" (click)="nextWebScreenshot(project.id, getActiveModuleScreenshots(project).length)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-              </button>
-            </div>
-
-            <!-- Screenshot Label -->
-            <div class="screenshot-label" *ngIf="getActiveModuleScreenshots(project).length > 0">
-              {{ getActiveModuleScreenshots(project)[activeModuleScreenshot[project.id]]?.label }}
-            </div>
-
-            <!-- Web Carousel Dots -->
-            <div class="carousel-dots">
-              <button *ngFor="let scr of getActiveModuleScreenshots(project); let j = index" 
-                      class="dot" 
-                      [class.active]="j === activeModuleScreenshot[project.id]"
-                      (click)="goToWebScreenshot(project.id, j)">
-              </button>
-            </div>
-          </div>
-        </ng-container>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section class="section" id="skills">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">What I Use</span>
-        <h2 class="section-title">Technical Expertise</h2>
-        <div class="title-line"></div>
-      </div>
-      <div class="skills-wrapper">
-        <div class="skill-pill" *ngFor="let skill of data.skills">
-          {{ skill }}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Education & Achievements (Bento Grid) -->
-  <section class="section" id="education">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Background</span>
-        <h2 class="section-title">Education & Achievements</h2>
-        <div class="title-line"></div>
-      </div>
-      <div class="bento-layout">
-        <!-- Education block -->
-        <div class="bento-card edu-container">
-          <h2 class="bento-title">🎓 Education</h2>
-          <div class="edu-item" *ngFor="let edu of data.education">
-            <h3 class="edu-degree">{{ edu.degree }}</h3>
-            <p class="edu-inst">{{ edu.institution }}</p>
-            <span class="edu-year">{{ edu.year }}</span>
-          </div>
-        </div>
-        
-        <!-- Achievements block -->
-        <div class="bento-card ach-container">
-          <h2 class="bento-title">🏆 Key Achievements</h2>
-          <ul class="ach-list">
-            <li *ngFor="let ach of data.achievements">
-              <div class="check-circle">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div class="browser-carousel-nav">
+                <button class="carousel-arrow arrow-left" (click)="prevWebScreenshot(project.id, getActiveModuleScreenshots(project).length)">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <span class="screenshot-lbl" *ngIf="getActiveModuleScreenshots(project).length > 0">
+                  {{ getActiveModuleScreenshots(project)[activeModuleScreenshot[project.id]]?.label }}
+                </span>
+                <button class="carousel-arrow arrow-right" (click)="nextWebScreenshot(project.id, getActiveModuleScreenshots(project).length)">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
               </div>
-              <span>{{ ach }}</span>
-            </li>
-          </ul>
+
+              <div class="carousel-dots-wrap">
+                <button *ngFor="let scr of getActiveModuleScreenshots(project); let j = index" 
+                        class="dot-indicator" 
+                        [class.active]="j === activeModuleScreenshot[project.id]"
+                        (click)="goToWebScreenshot(project.id, j)">
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Details Area -->
+          <div class="project-details">
+            <div class="project-title-bar">
+              <h3 class="proj-name">{{ project.name }}</h3>
+              <a [href]="project.link" target="_blank" class="proj-link-icon" *ngIf="project.link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+            <p class="proj-description">{{ project.description }}</p>
+            <div class="proj-tech-tags">
+              <span class="tech-tag" *ngFor="let tech of project.techStack">{{ tech }}</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
-  
-  <!-- Contact / Footer -->
-  <section class="section" id="contact">
+
+  <!-- Technical Arsenal (Skills & Education) -->
+  <section class="arsenal-section" id="skills">
     <div class="container">
-      <div class="bento-card contact-card">
-        <h2>Let's build something amazing together.</h2>
-        <div class="contact-links">
-          <a href="mailto:{{data.personalInfo.email}}" class="contact-item">
-            <div class="icon-wrap">📧</div> {{ data.personalInfo.email }}
-          </a>
-          <a href="tel:{{data.personalInfo.phone}}" class="contact-item">
-            <div class="icon-wrap">📱</div> {{ data.personalInfo.phone }}
-          </a>
+      <h2 class="section-title">Technical Arsenal</h2>
+      
+      <div class="arsenal-grid">
+        <!-- Languages column -->
+        <div class="arsenal-card">
+          <div class="arsenal-card-glow"></div>
+          <h3 class="arsenal-type-title">🛠️ Core Development</h3>
+          <div class="arsenal-list">
+            <span class="arsenal-item">Angular</span>
+            <span class="arsenal-item">Ionic Framework</span>
+            <span class="arsenal-item">TypeScript</span>
+            <span class="arsenal-item">JavaScript</span>
+            <span class="arsenal-item">HTML / SCSS / CSS</span>
+            <span class="arsenal-item">RxJS (Observables, Subjects)</span>
+          </div>
         </div>
+
+        <!-- Tools column -->
+        <div class="arsenal-card">
+          <div class="arsenal-card-glow"></div>
+          <h3 class="arsenal-type-title">📱 Native & Hybrid</h3>
+          <div class="arsenal-list">
+            <span class="arsenal-item">Android Studio (Java)</span>
+            <span class="arsenal-item">Xcode (Swift)</span>
+            <span class="arsenal-item">Capacitor Plugins</span>
+            <span class="arsenal-item">Cordova Plugins</span>
+            <span class="arsenal-item">FCM Push Notifications</span>
+            <span class="arsenal-item">Offline Storage (SQLite/IndexedDB)</span>
+          </div>
+        </div>
+
+        <!-- Services column -->
+        <div class="arsenal-card">
+          <div class="arsenal-card-glow"></div>
+          <h3 class="arsenal-type-title">🌐 Services & APIs</h3>
+          <div class="arsenal-list">
+            <span class="arsenal-item">REST APIs</span>
+            <span class="arsenal-item">GraphQL APIs</span>
+            <span class="arsenal-item">Socket.io (Realtime Chats)</span>
+            <span class="arsenal-item">Firebase Integrations</span>
+            <span class="arsenal-item">Google Maps Integration</span>
+            <span class="arsenal-item">Dynamic Theming</span>
+          </div>
+        </div>
+
+        <!-- Management / DevOps column -->
+        <div class="arsenal-card">
+          <div class="arsenal-card-glow"></div>
+          <h3 class="arsenal-type-title">⚙️ Process & DevOps</h3>
+          <div class="arsenal-list">
+            <span class="arsenal-item">Git / GitHub</span>
+            <span class="arsenal-item">GitLab CI/CD</span>
+            <span class="arsenal-item">Jira Management</span>
+            <span class="arsenal-item">App Store Connect</span>
+            <span class="arsenal-item">Google Play Console</span>
+            <span class="arsenal-item">Agile / Scrum Methodology</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education block -->
+      <div class="education-block">
+        <div class="edu-icon">🎓</div>
+        <div class="edu-details" *ngFor="let edu of data.education">
+          <h3 class="edu-title">{{ edu.degree }}</h3>
+          <p class="edu-info">{{ edu.institution }} &bull; {{ edu.year }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Let's Connect (Contact Form) -->
+  <section class="connect-section" id="contact">
+    <div class="container connect-wrapper">
+      <div class="connect-info">
+        <h2 class="connect-title">Let's Connect</h2>
+        <p class="connect-subtitle">Currently open to senior opportunities, remote contracts, or high-quality hybrid mobile projects. Drop a message to start the conversation.</p>
+        
+        <div class="connect-details">
+          <div class="detail-item">
+            <span class="item-icon">📧</span>
+            <div class="item-text">
+              <span class="item-label">EMAIL</span>
+              <a href="mailto:arslanshafiq95&#64;gmail.com" class="item-value">arslanshafiq95&#64;gmail.com</a>
+            </div>
+          </div>
+          <div class="detail-item">
+            <span class="item-icon">📍</span>
+            <div class="item-text">
+              <span class="item-label">LOCATION</span>
+              <span class="item-value">Available for Remote / Relocate</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="connect-form-container">
+        <form class="connect-form">
+          <div class="form-group">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" placeholder="John Doe" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" placeholder="john@example.com" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" placeholder="Tell me about your project..." rows="5" class="form-textarea" required></textarea>
+          </div>
+          <button type="submit" class="btn-send-message">Send Message</button>
+        </form>
       </div>
     </div>
   </section>
 </main>
 
 <footer class="footer">
-  <div class="container">
-    <p>&copy; 2026 {{ data.personalInfo.name }}. All rights reserved.</p>
+  <div class="container footer-wrapper">
+    <div class="footer-logo">DevPortfolio</div>
+    <div class="footer-copy">&copy; 2026 Muhammad Arslan. Mobile & Web Developer.</div>
   </div>
 </footer>
