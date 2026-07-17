@@ -411,6 +411,20 @@
     flex-direction: column;
     height: 100%;
     transition: var(--transition);
+    
+    /* Enforce dark-theme styles inside project cards since card backgrounds are always dark gradients */
+    --text-primary: #ffffff;
+    --text-secondary: #cbd5e1;
+    --text-tertiary: #94a3b8;
+    --border-color: rgba(255, 255, 255, 0.12);
+    --tech-tag-bg: rgba(255, 255, 255, 0.05);
+    --tech-tag-border: rgba(255, 255, 255, 0.15);
+    --accent-primary: #00e5ff;
+    --browser-frame-bg: #09090c;
+    --browser-header-bg: #121216;
+    --browser-address-bg: rgba(255, 255, 255, 0.04);
+    --dot-inactive: rgba(255, 255, 255, 0.2);
+
     &:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); border-color: var(--card-hover-border); }
     .card-glow { display: none; }
   }
