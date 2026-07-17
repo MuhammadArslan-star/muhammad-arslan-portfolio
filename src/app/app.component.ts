@@ -61,7 +61,7 @@ export class AppComponent implements OnInit, OnDestroy {
       id: 'employee',
       name: 'Mobile Sentrix Employee App',
       description: 'Comprehensive HRMS employee app featuring task management, timesheets, asset tracking, leave & expense management, real-time messaging, and smart scheduler — all in a sleek, intuitive interface.',
-      techStack: ['Ionic', 'Angular', 'TypeScript', 'REST APIs', 'Socket.io', 'SQLite', 'IndexedDB', 'FCM'],
+      techStack: ['Ionic', 'Angular', 'TypeScript', 'REST APIs', 'Socket.io', 'SQLite', 'IndexedDB', 'FCM', 'RxJS'],
       type: 'mobile',
       link: 'https://apps.apple.com/us/app/hrms-mobile/id6449835914?',
       screenshots: [
