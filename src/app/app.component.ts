@@ -61,7 +61,7 @@ export class AppComponent implements OnInit, OnDestroy {
       id: 'employee',
       name: 'Mobile Sentrix Employee App',
       description: 'Comprehensive HRMS employee app featuring task management, timesheets, asset tracking, leave & expense management, real-time messaging, and smart scheduler — all in a sleek, intuitive interface.',
-      techStack: ['Ionic', 'Angular', 'TypeScript', 'REST APIs', 'Socket.io', 'SQLite', 'IndexedDB', 'FCM', 'RxJS'],
+      techStack: ['Ionic', 'Angular', 'TypeScript', 'REST APIs', 'GraphQL', 'GraphQL Subscriptions', 'Socket.io', 'SQLite', 'IndexedDB', 'FCM', 'RxJS'],
       type: 'mobile',
       link: 'https://apps.apple.com/us/app/hrms-mobile/id6449835914?',
       screenshots: [
@@ -161,7 +161,7 @@ export class AppComponent implements OnInit, OnDestroy {
       id: 'device-processing',
       name: 'Device Processing',
       description: 'A specialized mobile application for tracking and processing device repairs and service orders. Built to streamline workflow operations for both managers and field technicians with comprehensive scheduling, parts management, and status updates.',
-      techStack: ['Ionic', 'Angular', 'TypeScript', 'REST APIs', 'GraphQL', 'Socket.io', 'SQLite', 'IndexedDB', 'FCM', 'RxJS'],
+      techStack: ['Ionic', 'Angular', 'TypeScript', 'GraphQL', 'GraphQL Subscriptions', 'SQLite', 'IndexedDB', 'FCM', 'RxJS'],
       type: 'mobile',
       screenshots: [
         'assets/device-processing/manager/dpi1.png',
