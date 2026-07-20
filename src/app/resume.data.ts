@@ -25,6 +25,10 @@ export const RESUME_DATA = {
         {
           name: 'Mobile Sentrix Employee Web Portal',
           description: 'Built a comprehensive HRMS web portal with modules for Leave, Loan, Attendance, Expense request/approval workflows, Task Management, and Employee Profile management.'
+        },
+        {
+          name: 'Device Processing',
+          description: 'Developed a specialized mobile application for tracking and processing device repairs and service orders for both managers and technicians, featuring full repair flow management, scheduling, and offline-capable data processing.'
         }
       ],
       responsibilities: [

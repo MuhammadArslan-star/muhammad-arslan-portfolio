@@ -156,6 +156,46 @@ export class AppComponent implements OnInit, OnDestroy {
           ]
         }
       ]
+    },
+    {
+      id: 'device-processing',
+      name: 'Device Processing',
+      description: 'A specialized mobile application for tracking and processing device repairs and service orders. Built to streamline workflow operations for both managers and field technicians with comprehensive scheduling, parts management, and status updates.',
+      techStack: ['Ionic', 'Angular', 'TypeScript', 'REST APIs', 'GraphQL', 'Socket.io', 'SQLite', 'IndexedDB', 'FCM', 'RxJS'],
+      type: 'mobile',
+      screenshots: [
+        'assets/device-processing/manager/dpi1.png',
+        'assets/device-processing/manager/dpi2.png',
+        'assets/device-processing/manager/dpi3.png',
+        'assets/device-processing/manager/dpi4.png',
+        'assets/device-processing/manager/dpi5.png',
+        'assets/device-processing/manager/dpi6.png',
+        'assets/device-processing/manager/dpi7.png',
+        'assets/device-processing/manager/dpi8.png',
+        'assets/device-processing/manager/dpi9.png',
+        'assets/device-processing/manager/dpi10.png',
+        'assets/device-processing/manager/dpi10(1).png',
+        'assets/device-processing/manager/dpi10(2).png',
+        'assets/device-processing/manager/dpi11.png',
+        'assets/device-processing/manager/dpi12.png',
+        'assets/device-processing/manager/dpi13.png',
+        'assets/device-processing/manager/dpi14.png',
+        'assets/device-processing/manager/dpi15.png',
+        'assets/device-processing/manager/dpi16.png',
+        'assets/device-processing/manager/dpi17.png',
+        'assets/device-processing/manager/dpi18.png',
+        'assets/device-processing/manager/dpi19.png',
+        'assets/device-processing/manager/dpi20.png',
+        'assets/device-processing/technician/dpi-tech1.png',
+        'assets/device-processing/technician/dpi-tech2.png',
+        'assets/device-processing/technician/dpi-tech3.png',
+        'assets/device-processing/technician/dpi-tech4.png',
+        'assets/device-processing/technician/dpi-tech5.png',
+        'assets/device-processing/technician/dpi-tech6.png',
+        'assets/device-processing/technician/dpi-tech7.png',
+        'assets/device-processing/technician/dpi-tech8.png'
+      ],
+      gradient: 'var(--proj-employee-bg)'
     }
   ];
 
